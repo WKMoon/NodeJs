@@ -35,9 +35,7 @@ var Contact = mongoose.model('contact', contactSchema);
 //Routes
 //Home
 app.get('/', function(req,res){
-  Contact.find({},function(err,contacts){
-    res.redirect('/contacts');
-  });
+  res.redirect('/contacts');
 });
 
 //Contacts - Index
@@ -55,7 +53,7 @@ app.get('/contacts/new', function(req,res){
 
 //Contacts - create
 app.post('/contacts', function(req,res){
-  Contact.create('/contacts', function(req,res){
+  Contact.create(req.body, function(err,contact){
     if(err) return res.json(err);
     res.redirect('/contacts');
   });
