@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" dir="ltr">
   <head>
@@ -12,7 +12,7 @@
       <ul>
         <% contacts.forEach(function(contact){ %>
           <li>
-            <%= contact.name %>
+            <a href="/contacts/<%=contact._id%>"><%= contact.name %></a>
           </li>
           <% }) %>
       </ul>
