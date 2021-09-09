@@ -5,11 +5,11 @@ var methodOverride = require('method-override');
 var app = express();
 
 // DB setting
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost:27017");
+// mongoose.set('useNewUrlParser', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+// mongoose.set('useUnifiedTopology', true);
+mongoose.connect('mongodb://localhost:27017');
 var db = mongoose.connection;
 db.once('open', function(){
   console.log('DB connected');
