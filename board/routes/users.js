@@ -6,7 +6,7 @@ var User = require('../models/User');
 router.get('/', function(req,res){
   User.find({})
   .sort({username:1})
-  .exex(function(err,users){
+  .exec(function(err,users){
     if(err) return res.json(err);
     res.render('users/index', {users:users});
   });
